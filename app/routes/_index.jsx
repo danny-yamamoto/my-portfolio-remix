@@ -14,8 +14,8 @@ export const links = () => {
 
 export const meta = () => {
   return [
-    { title: "danny's Portfolio" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Daisuke Yamamoto" },
+    { name: "description", content: "danny's portfolio" },
   ];
 };
 
@@ -89,7 +89,7 @@ export default function Index() {
       </section>
 
       <footer>
-        <p>&copy; 2023 danny. All rights reserved.</p>
+        <p>&copy; 2023 {data.myname}. All rights reserved.</p>
         <div className="social-links">
           <Link target="_blank" to={data.githubProfile}><i className="fab fa-github"></i></Link>
           <Link target="_blank" to={data.twitterProfile}><i className="fab fa-twitter"></i></Link>
