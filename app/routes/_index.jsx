@@ -27,6 +27,7 @@ export const loader = async () => {
     url: item.url,
     id: item.id,
   }));
+  const numOfArticles = jsonFromQiita.length;
   const experienceFromDatabase = await getExperienceFromDatabase();
   const certificatesFromDatabase = await getCertificatesFromDatabase();
   const combinedJson = {
@@ -34,6 +35,7 @@ export const loader = async () => {
     myname: "Daisuke Yamamoto",
     displayExperience: experienceFromDatabase,
     displayItems: filterJsonFromQiita,
+    displayItemsNum: numOfArticles,
     displayCerts: certificatesFromDatabase,
     twitterProfile: "https://twitter.com/dai_s_a_n",
     githubProfile: "https://github.com/danny-yamamoto"
@@ -68,7 +70,7 @@ export default function Index() {
 
       {/* Articles Section */}
       <section id="articles">
-        <h2>Top 10 Articles</h2>
+        <h2>Top {data.displayItemsNum} Articles</h2>
         <ul>
         {articles.map((article) => (
           <li key={article.id}>
